@@ -13,7 +13,17 @@ Whenever Antigravity opens or a new session starts:
    - Check how many PRs were created on today's calendar date.
 
 2. **If Fewer Than 2 PRs Were Created Today**:
-   - **Step A**: Ensure the previous PR is merged into `develop` (`gh pr view <pr_num>` / `git checkout develop && git pull origin develop`).
+   - **Step A (MANDATORY GATE - Prior PR Must Be Merged)**:
+     - Check open PRs: `gh pr list --state open --limit 5`
+     - Check latest PR status: `gh pr view --json state,number,title`
+     - **IF THE PREVIOUS PR IS STILL OPEN (NOT MERGED)**:
+       - **STOP immediately**.
+       - Do NOT create a new feature branch or open a new PR.
+       - Notify the user that PR #X is awaiting their review/merge, providing the direct PR link.
+       - Wait until it is merged into `develop`.
+     - **IF AND ONLY IF THE PREVIOUS PR IS CONFIRMED MERGED**:
+       - Switch to `develop` and pull latest changes: `git checkout develop && git pull origin develop`
+       - Proceed to Step B.
    - **Step B**: Read the next pending feature from `.github/roadmap_backlog.json`.
    - **Step C**: Create the feature branch from `develop`:
      `git checkout -b feature/<feature-name>`
