@@ -1,0 +1,142 @@
+{
+  "project": "AstraML Backend",
+  "cadence": "2 PRs per day",
+  "estimated_days": "7-8 days",
+  "features": [
+    {
+      "order": 1,
+      "branch": "feature/backend-foundation",
+      "title": "feat(api): initialize FastAPI backend foundation and health check",
+      "status": "in_progress",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Initialize production FastAPI application structure, Pydantic settings, CORS configuration, logging, and health endpoint."
+    },
+    {
+      "order": 2,
+      "branch": "feature/database",
+      "title": "feat(db): implement SQLite connection pool and experiment repository",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Establish thread-safe SQLite connection in WAL mode, experiment and chat session tables, and repository abstraction."
+    },
+    {
+      "order": 3,
+      "branch": "feature/file-upload-api",
+      "title": "feat(api): implement dataset upload endpoint and storage validation",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Build /api/upload endpoint for CSV and Excel files, UUID dataset naming, and file size checks."
+    },
+    {
+      "order": 4,
+      "branch": "feature/data-validation",
+      "title": "feat(ml): implement data profiler and automated target detection",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Data profiling engine calculating summary stats, null ratios, unique counts, distributions, and problem type inference."
+    },
+    {
+      "order": 5,
+      "branch": "feature/preprocessing",
+      "title": "feat(ml): implement data leakage detector and cleaning pipeline",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Leakage detector for high correlations / ID columns, missing value imputation, outlier handling, encoding, and /api/clean."
+    },
+    {
+      "order": 6,
+      "branch": "feature/model-training",
+      "title": "feat(ml): implement model training service with cross-validation",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Scikit-Learn classification and regression pipeline, K-Fold / StratifiedKFold cross-validation, and joblib persistence."
+    },
+    {
+      "order": 7,
+      "branch": "feature/model-evaluation",
+      "title": "feat(ml): implement evaluation metrics suite and AstraVerdict engine",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Calculate accuracy, F1, precision, recall, ROC-AUC, RMSE, MAE, R2, and AI-driven verdict summary."
+    },
+    {
+      "order": 8,
+      "branch": "feature/websocket-streaming",
+      "title": "feat(api): implement WebSocket training event broadcasting",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Add /ws/train endpoint broadcasting live training progress, fold metrics, and completion events."
+    },
+    {
+      "order": 9,
+      "branch": "feature/shap",
+      "title": "feat(shap): implement SHAP explainability and what-if simulation APIs",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "TreeExplainer feature attribution, permutation importances, /api/explain/shap, and /api/explain/whatif simulation."
+    },
+    {
+      "order": 10,
+      "branch": "feature/chat",
+      "title": "feat(ai): implement Astra conversational assistant and action dispatch",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Groq/Llama-3 integration with experiment context, fallback responses, and automated actions (retrain, explain)."
+    },
+    {
+      "order": 11,
+      "branch": "feature/report",
+      "title": "feat(api): implement AI narrative report and PDF export service",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Gemini/Groq narrative synthesis and ReportLab PDF document compilation at /api/report."
+    },
+    {
+      "order": 12,
+      "branch": "feature/logging",
+      "title": "feat(api): add structured logging and centralized error handling middleware",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Request timing, correlation IDs, exception handlers, and standard JSON error response schemas."
+    },
+    {
+      "order": 13,
+      "branch": "feature/testing",
+      "title": "test: add comprehensive unit and integration test suite",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Pytest test cases covering end-to-end upload, clean, train, explain, and database operations."
+    },
+    {
+      "order": 14,
+      "branch": "feature/docker",
+      "title": "build: configure production Dockerfile and Docker Compose",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Multi-stage Dockerfile, docker-compose.yml, environment variable handling, and container networking."
+    },
+    {
+      "order": 15,
+      "branch": "feature/backend-ci",
+      "title": "ci: add GitHub Actions workflow for backend linting and testing",
+      "status": "pending",
+      "pr_number": null,
+      "pr_url": null,
+      "description": "Automated CI pipeline on pull requests and pushes to develop, running ruff/flake8 and pytest."
+    }
+  ]
+}
