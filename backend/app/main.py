@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.config import logger, settings
+from backend.app.db.connection import init_db
 
 
 @asynccontextmanager
@@ -13,6 +14,9 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     settings.upload_path.mkdir(parents=True, exist_ok=True)
     settings.model_cache_path.mkdir(parents=True, exist_ok=True)
     settings.sqlite_db_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Initialize SQLite tables
+    init_db()
 
     logger.info("AstraML consolidated backend starting up...")
     logger.info("Upload path configured at: %s", settings.upload_path)
