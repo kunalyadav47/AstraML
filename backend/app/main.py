@@ -50,9 +50,11 @@ app.add_middleware(
 )
 
 
+from backend.app.routers.clean import router as clean_router
 from backend.app.routers.upload import router as upload_router
 
 app.include_router(upload_router)
+app.include_router(clean_router)
 
 
 @app.get("/health")
