@@ -50,6 +50,11 @@ app.add_middleware(
 )
 
 
+from backend.app.routers.upload import router as upload_router
+
+app.include_router(upload_router)
+
+
 @app.get("/health")
 async def health() -> dict[str, str]:
     return {"status": "ok", "service": "astraml-backend"}
