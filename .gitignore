@@ -17,10 +17,12 @@ htmlcov/
 .mypy_cache/
 
 # Databases and application storage
-backend/db/
-db/
-uploads/
-model_cache/
+*.db
+*.sqlite
+*.sqlite3
+/db/
+/uploads/
+/model_cache/
 .env
 
 # Node.js dependencies
